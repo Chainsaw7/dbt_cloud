@@ -3,7 +3,7 @@ from snowflake.snowpark.functions import col
 
 def model(dbt, session: snowpark.Session): 
     # Your code goes here, inside the "main" handler.
-    dataframe1 = dbt.source("staging", "products")   
+    dataframe1 = dbt.ref("my_first_dbt_model")   
     dataframe2 = dbt.source("staging", "orders")  
     # Print a sample of the dataframe to standard output.
     
