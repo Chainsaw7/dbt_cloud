@@ -9,7 +9,7 @@
 
 {{ config(materialized='table') }}
 
-use warehouse transforming
+use database mydb
     
 with CTE as (
     select * from products
