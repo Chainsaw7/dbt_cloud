@@ -1,6 +1,15 @@
 
 version: 2
 
+sources:
+ - name: staging
+   schema: public
+   database: mydb
+   tables:
+    - name: products
+      description: "List of products for sale"
+      identifier: products
+      
 models:
     - name: my_first_dbt_model
       description: "A starter dbt model"
