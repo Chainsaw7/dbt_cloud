@@ -7,9 +7,11 @@ def model(dbt, session: snowpark.Session):
     dataframe2 = dbt.source("staging", "orders")  
     # Print a sample of the dataframe to standard output.
     
-    result = dataframe1.join(dataframe2, how="inner", on="product_id" )
+    df1 = dataframe1.join(dataframe2, how="inner", on="product_id" )
+    
+    df1 = df1.withColumn("revenue", df1["price"] * df1["quantity"])
+    df2=df1[['product_id', 'revenue' ]]
 
-    new_result=result[['product_id', 'price','quantity']]
-
+    df3 = df2.groupBy("product_id").agg({"revenue": "sum"})
     # Return value will appear in the Results tab.
-    return new_result
+    return df3
