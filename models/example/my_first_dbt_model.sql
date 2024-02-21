@@ -8,8 +8,6 @@
 */
 
 {{ config(materialized='table') }}
-
-use database mydb
     
 with CTE as (
     select * from products
