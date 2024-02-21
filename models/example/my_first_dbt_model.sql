@@ -10,8 +10,8 @@
 {{ config(materialized='table') }}
     
 with CTE as (
-    select * from products
-    where price<30
+    select * from {{ source('staging', 'products') }} 
+    where price<30.0
 )
 select *
 from CTE
