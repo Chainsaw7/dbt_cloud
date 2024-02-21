@@ -10,7 +10,6 @@ def model(dbt, session: snowpark.Session):
     result = dataframe1.join(dataframe2, how="inner", on="product_id" )
 
     new_result=result[['product_id', 'price','quantity']]
-    new_result.show()
 
     # Return value will appear in the Results tab.
     return new_result
