@@ -9,6 +9,14 @@ sources:
     - name: products
       description: "List of products for sale"
       identifier: products
+ - name: staging
+   schema: public
+   database: mydb
+   tables:
+    - name: orders
+      description: "List of orders"
+      identifier: orders
+
       
 models:
     - name: my_first_dbt_model
