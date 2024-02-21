@@ -9,6 +9,8 @@
 
 {{ config(materialized='table') }}
 
+use warehouse transforming
+    
 with CTE as (
     select * from products
     where price<30
