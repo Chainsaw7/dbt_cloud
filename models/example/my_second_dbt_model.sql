@@ -3,4 +3,4 @@
 
 select *
 from {{ ref('my_first_dbt_model') }}
-where product_id = 3
+where product_id = 2
